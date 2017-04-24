@@ -10,3 +10,15 @@ C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplica
 C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csproj.GenerateResource.Cache
 C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csprojResolveAssemblyReference.cache
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LoginScreen.resources
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.IncidentPage.resources
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csproj.GenerateResource.Cache

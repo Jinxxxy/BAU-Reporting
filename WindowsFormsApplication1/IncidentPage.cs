@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,31 +9,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.Services;
 
 namespace WindowsFormsApplication1
 {
     public partial class IncidentPage : Form
     {
-        private DataTable serializeString(string _returnedString)
+       public IncidentPage(string jsonString)
         {
-            try
-            {
-                MessageBox.Show(_returnedString);
-                DataTable table = (DataTable)JsonConvert.DeserializeObject(_returnedString, typeof(DataTable));
-                return table;
-            } catch(Exception err)
-            {
-                MessageBox.Show(err.Data.ToString());
-                DataTable table = (DataTable)JsonConvert.DeserializeObject("[{\"No\":\"Data\", \"Has\":\"Been\", \"Received\":\"Ok\"}]", typeof(DataTable));
-                return table;
-            }
-        }
-        public IncidentPage(string jsonString)
-        {
+            GettingServiceDetails gsd = new GettingServiceDetails();
             InitializeComponent();
+            BindingSource bs = new BindingSource();
+            dataGridView1.DataSource = bs;
+            bs.DataSource = gsd.serializeString(jsonString);
             dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = serializeString(jsonString);
-            dataGridView1.Refresh();
+            dataGridView1.Dock = DockStyle.Fill;
+            
+            //dataGridView1.Refresh();
 
         }
 
