@@ -7,3 +7,12 @@ C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Window
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LoginScreen.resources
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache

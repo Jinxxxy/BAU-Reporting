@@ -34,9 +34,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("This is blank");
                 return rawUsername;
             }
-            
-
-
         }
 
         private string getPassword(TextBox _passwordInput)
@@ -62,7 +59,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public async Task<string> MakeRequestToServiceNow()
+        public string MakeRequestToServiceNow()
         {
             //Testing
             string username = GetUserName(this.UsernameInput);
@@ -77,17 +74,24 @@ namespace WindowsFormsApplication1
                 "basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password))
                 );
-            HttpResponseMessage response = await client.GetAsync("https://stepchangeprod.service-now.com/api/now/table/incident?sysparm_limit=10&assignment_group=Dev%20-%20Advice%20%26%20Activations");
-            
-            var returnValue = response.Content.ReadAsStringAsync();
-
-            return returnValue.ToString();
-
+            var response = client.GetAsync("https://stepchangeprod.service-now.com/api/now/table/incident?sysparm_limit=10&assignment_group=Dev%20-%20Advice%20%26%20Activations");
+            string result;
+            try
+            {
+                result = response.Result.Content.ReadAsStringAsync().Result;
+            } catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+                result = "{data:{name:none}}";
+            }
+            return result;
         }
 
-        private void LoginButton_Click(object sender, EventArgs e)
+        private async void LoginButton_Click(object sender, EventArgs e)
         {
-            MakeRequestToServiceNow();
+            string value = MakeRequestToServiceNow();
+            IncidentPage inc = new IncidentPage(value);
+            inc.Show();
         }
     }
 }

@@ -1,0 +1,12 @@
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Development\CSharp\BAU\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csprojResolveAssemblyReference.cache
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LoginScreen.resources
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.IncidentPage.resources
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csproj.GenerateResource.Cache
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

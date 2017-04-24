@@ -1,0 +1,8 @@
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\BAU Unit Tests.dll
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\BAU Unit Tests.pdb
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\WindowsFormsApplication1.exe
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\WindowsFormsApplication1.pdb
+C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.csprojResolveAssemblyReference.cache
+C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.dll
+C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.pdb
