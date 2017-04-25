@@ -21,7 +21,11 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = true;
             BindingSource bs = new BindingSource();
-            bs.DataSource = gsd.serializeString(jsonString);
+            bs.DataSource = gsd.serializeString(jsonString);            
+            for(var i  = 1; i < dataGridView1.Columns.Count; i++)
+            {
+                dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.Automatic;
+            }           
             dataGridView1.DataSource = bs;
             dataGridView1.Refresh();
         }
@@ -30,6 +34,11 @@ namespace WindowsFormsApplication1
         {
             ChartArea ca = new ChartArea();
             ca.Show();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

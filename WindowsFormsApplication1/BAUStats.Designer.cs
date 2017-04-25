@@ -36,6 +36,10 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.StartDateInput = new System.Windows.Forms.DateTimePicker();
+            this.EndDateInput = new System.Windows.Forms.DateTimePicker();
+            this.StartDateLabel = new System.Windows.Forms.Label();
+            this.EndDateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +66,7 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(134, 181);
+            this.LoginButton.Location = new System.Drawing.Point(134, 251);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 3;
@@ -106,12 +110,48 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // StartDateInput
+            // 
+            this.StartDateInput.Location = new System.Drawing.Point(134, 183);
+            this.StartDateInput.Name = "StartDateInput";
+            this.StartDateInput.Size = new System.Drawing.Size(200, 21);
+            this.StartDateInput.TabIndex = 7;
+            // 
+            // EndDateInput
+            // 
+            this.EndDateInput.Location = new System.Drawing.Point(134, 216);
+            this.EndDateInput.Name = "EndDateInput";
+            this.EndDateInput.Size = new System.Drawing.Size(200, 21);
+            this.EndDateInput.TabIndex = 8;
+            // 
+            // StartDateLabel
+            // 
+            this.StartDateLabel.AutoSize = true;
+            this.StartDateLabel.Location = new System.Drawing.Point(68, 189);
+            this.StartDateLabel.Name = "StartDateLabel";
+            this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
+            this.StartDateLabel.TabIndex = 9;
+            this.StartDateLabel.Text = "Start Date";
+            // 
+            // EndDateLabel
+            // 
+            this.EndDateLabel.AutoSize = true;
+            this.EndDateLabel.Location = new System.Drawing.Point(72, 224);
+            this.EndDateLabel.Name = "EndDateLabel";
+            this.EndDateLabel.Size = new System.Drawing.Size(48, 13);
+            this.EndDateLabel.TabIndex = 10;
+            this.EndDateLabel.Text = "End Date";
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(397, 216);
+            this.ClientSize = new System.Drawing.Size(397, 286);
+            this.Controls.Add(this.EndDateLabel);
+            this.Controls.Add(this.StartDateLabel);
+            this.Controls.Add(this.EndDateInput);
+            this.Controls.Add(this.StartDateInput);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.UsernameInput);
@@ -133,10 +173,14 @@
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.TextBox PasswordInput;
-        private System.Windows.Forms.TextBox UsernameInput;
+        public System.Windows.Forms.TextBox PasswordInput;
+        public System.Windows.Forms.TextBox UsernameInput;
         private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker StartDateInput;
+        private System.Windows.Forms.DateTimePicker EndDateInput;
+        private System.Windows.Forms.Label StartDateLabel;
+        private System.Windows.Forms.Label EndDateLabel;
     }
 }
 

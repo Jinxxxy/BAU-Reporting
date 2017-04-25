@@ -73,6 +73,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GettingServiceDetails.cs" />
+    <Compile Include="Services\_DateTime.cs" />
     <EmbeddedResource Include="BAUStats.resx">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </EmbeddedResource>

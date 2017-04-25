@@ -34,15 +34,12 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ByApplication = new System.Windows.Forms.Button();
             this.BySolution = new System.Windows.Forms.Button();
             this.ByDuration = new System.Windows.Forms.Button();
             this.CommonIssues = new System.Windows.Forms.Button();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IncidentListLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +66,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 35);
+            this.comboBox2.Location = new System.Drawing.Point(482, 39);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 2;
@@ -86,47 +83,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 13);
+            this.label2.Location = new System.Drawing.Point(553, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Group By";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(325, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Start Date";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(471, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "End Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(328, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 21);
-            this.dateTimePicker1.TabIndex = 9;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(474, 35);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(129, 21);
-            this.dateTimePicker2.TabIndex = 10;
-            // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
             // 
             // ByApplication
             // 
@@ -149,7 +110,7 @@
             // 
             // ByDuration
             // 
-            this.ByDuration.Location = new System.Drawing.Point(323, 415);
+            this.ByDuration.Location = new System.Drawing.Point(298, 415);
             this.ByDuration.Name = "ByDuration";
             this.ByDuration.Size = new System.Drawing.Size(137, 47);
             this.ByDuration.TabIndex = 13;
@@ -165,19 +126,30 @@
             this.CommonIssues.Text = "Common Issues";
             this.CommonIssues.UseVisualStyleBackColor = true;
             // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
+            // 
+            // IncidentListLabel
+            // 
+            this.IncidentListLabel.AutoSize = true;
+            this.IncidentListLabel.Font = new System.Drawing.Font("Corbel", 24F);
+            this.IncidentListLabel.Location = new System.Drawing.Point(208, 13);
+            this.IncidentListLabel.Name = "IncidentListLabel";
+            this.IncidentListLabel.Size = new System.Drawing.Size(178, 39);
+            this.IncidentListLabel.TabIndex = 15;
+            this.IncidentListLabel.Text = "Incident List";
+            // 
             // IncidentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 474);
+            this.Controls.Add(this.IncidentListLabel);
             this.Controls.Add(this.CommonIssues);
             this.Controls.Add(this.ByDuration);
             this.Controls.Add(this.BySolution);
             this.Controls.Add(this.ByApplication);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
@@ -200,14 +172,11 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.BindingSource programBindingSource;
         private System.Windows.Forms.Button ByApplication;
         private System.Windows.Forms.Button BySolution;
         private System.Windows.Forms.Button ByDuration;
         private System.Windows.Forms.Button CommonIssues;
+        private System.Windows.Forms.Label IncidentListLabel;
     }
 }

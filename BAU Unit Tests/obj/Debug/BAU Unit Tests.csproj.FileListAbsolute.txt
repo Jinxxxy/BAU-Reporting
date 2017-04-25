@@ -6,3 +6,13 @@ C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\WindowsFormsApplication1.pdb
 C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.csprojResolveAssemblyReference.cache
 C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.dll
 C:\Development\CSharp\BAU\BAU Unit Tests\obj\Debug\BAU Unit Tests.pdb
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\BAU Unit Tests.dll
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\BAU Unit Tests.pdb
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\WindowsFormsApplication1.exe
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\Newtonsoft.Json.dll
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\WindowsFormsApplication1.pdb
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\Newtonsoft.Json.xml
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.csprojResolveAssemblyReference.cache
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.dll
+C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.pdb
