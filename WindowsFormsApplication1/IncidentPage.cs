@@ -24,7 +24,6 @@ namespace WindowsFormsApplication1
             bs.DataSource = gsd.serializeString(jsonString);
             dataGridView1.DataSource = bs;
             dataGridView1.Refresh();
-
         }
 
         private void ByApplication_Click(object sender, EventArgs e)
