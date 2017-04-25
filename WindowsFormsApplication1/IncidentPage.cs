@@ -19,15 +19,18 @@ namespace WindowsFormsApplication1
         {
             GettingServiceDetails gsd = new GettingServiceDetails();
             InitializeComponent();
-            BindingSource bs = new BindingSource();
-            dataGridView1.DataSource = bs;
-            bs.DataSource = gsd.serializeString(jsonString);
             dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.Dock = DockStyle.Fill;
-            
-            //dataGridView1.Refresh();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = gsd.serializeString(jsonString);
+            dataGridView1.DataSource = bs;
+            dataGridView1.Refresh();
 
         }
 
+        private void ByApplication_Click(object sender, EventArgs e)
+        {
+            ChartArea ca = new ChartArea();
+            ca.Show();
+        }
     }
 }

@@ -84,7 +84,7 @@
             this.UsernameInput.Location = new System.Drawing.Point(134, 119);
             this.UsernameInput.Name = "UsernameInput";
             this.UsernameInput.Size = new System.Drawing.Size(258, 21);
-            this.UsernameInput.TabIndex = 4;
+            this.UsernameInput.TabIndex = 1;
             // 
             // HeaderLabel
             // 

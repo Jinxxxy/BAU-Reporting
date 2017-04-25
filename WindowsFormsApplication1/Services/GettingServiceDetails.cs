@@ -15,10 +15,9 @@ namespace WindowsFormsApplication1.Services
         {
             JToken obj = JObject.Parse(_returnedString)["result"];
             string newString = JsonConvert.SerializeObject(obj);
-
             try
             {
-                var dataSource = JsonConvert.DeserializeObject<List<IncidentClass>>(newString);
+                List<IncidentClass> dataSource = JsonConvert.DeserializeObject<List<IncidentClass>>(newString);
                 return dataSource;
             }
             catch (Exception err)

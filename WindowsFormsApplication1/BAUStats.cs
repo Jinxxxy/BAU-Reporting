@@ -10,6 +10,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApplication1
 {
@@ -82,7 +83,21 @@ namespace WindowsFormsApplication1
             } catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-                result = "{data:{name:none}}";
+                IncidentClass tic = new IncidentClass();
+                tic.Application = "DCS";
+                tic.ClosedDate = DateTime.Now;
+                tic.OpenedDate = DateTime.Now;
+                tic.ClosureCode = "Closed";
+                tic.IncidentID = "INC148908";
+                tic.LongDescription = "This is the long description";
+                tic.Owner = "Craig Berry";
+                tic.Priority = "High";
+                tic.ShortDescription = "This is the short description";
+                tic.SubClosureCode = "No Fault Founded";
+                tic.Team = "Dev - Advice & Activations";
+                string ff = "[" + JsonConvert.SerializeObject(tic) + "]";
+                result = ff;
+                MessageBox.Show(result);
             }
             return result;
         }

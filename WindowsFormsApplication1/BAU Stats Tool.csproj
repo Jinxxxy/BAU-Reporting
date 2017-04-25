@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,12 @@
     <Compile Include="BAUStats.Designer.cs">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChartArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartArea.Designer.cs">
+      <DependentUpon>ChartArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="IncidentClass.cs" />
     <Compile Include="IncidentPage.cs">
       <SubType>Form</SubType>
@@ -68,6 +75,9 @@
     <Compile Include="Services\GettingServiceDetails.cs" />
     <EmbeddedResource Include="BAUStats.resx">
       <DependentUpon>BAUStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChartArea.resx">
+      <DependentUpon>ChartArea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidentPage.resx">
       <DependentUpon>IncidentPage.cs</DependentUpon>
