@@ -38,8 +38,8 @@
             this.BySolution = new System.Windows.Forms.Button();
             this.ByDuration = new System.Windows.Forms.Button();
             this.CommonIssues = new System.Windows.Forms.Button();
-            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IncidentListLabel = new System.Windows.Forms.Label();
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,7 @@
             this.BySolution.TabIndex = 12;
             this.BySolution.Text = "By Solution";
             this.BySolution.UseVisualStyleBackColor = true;
+            this.BySolution.Click += new System.EventHandler(this.BySolution_Click);
             // 
             // ByDuration
             // 
@@ -126,10 +127,6 @@
             this.CommonIssues.Text = "Common Issues";
             this.CommonIssues.UseVisualStyleBackColor = true;
             // 
-            // programBindingSource
-            // 
-            this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
-            // 
             // IncidentListLabel
             // 
             this.IncidentListLabel.AutoSize = true;
@@ -139,6 +136,10 @@
             this.IncidentListLabel.Size = new System.Drawing.Size(178, 39);
             this.IncidentListLabel.TabIndex = 15;
             this.IncidentListLabel.Text = "Incident List";
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
             // 
             // IncidentPage
             // 

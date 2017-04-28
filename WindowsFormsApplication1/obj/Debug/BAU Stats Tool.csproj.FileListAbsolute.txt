@@ -22,5 +22,6 @@ C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Window
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csproj.GenerateResource.Cache
 C:\Development\CSharp\BAU\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ChartArea.resources
-C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ChartArea.resources
 C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\BAU Stats Tool.csprojResolveAssemblyReference.cache
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ByApplicationChart.resources
+C:\dev\newdev\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BySolutionChart.resources

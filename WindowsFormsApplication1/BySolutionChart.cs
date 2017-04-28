@@ -11,22 +11,19 @@ using WindowsFormsApplication1.Services;
 
 namespace WindowsFormsApplication1
 {
-    public partial class ChartArea : Form
+    public partial class BySolutionChart : Form
     {
-        public ChartArea()
+        public BySolutionChart()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             GettingServiceDetails gsd = new GettingServiceDetails();
-            Dictionary<string, int> incData = gsd.getApplicationNumbers(GettingServiceDetails.incidentList, gsd.getApplicationNames(GettingServiceDetails.incidentList));
+            Dictionary<string, int> incData = gsd.getYAxisNumbers(GettingServiceDetails.incidentList, gsd.getXAxisNames(GettingServiceDetails.incidentList, "ClosureCode"), "ClosureCode");
             chart1.Series.Add("Series 1");
             chart1.Series["Series 1"].Points.DataBindXY(incData.Keys, incData.Values);
-            chart1.Titles.Add("By Application");
+            chart1.Titles.Add("By Solution");
             chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.Series["Series 1"].IsValueShownAsLabel = true;
-            //foreach (var x in incData)
-            //{
-                
-            //}
         }
     }
 }

@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
     [DataContract]
     class IncidentClass
     {
-        [JsonProperty("subcategory")]
+        [JsonProperty("cmdb_ci.name")]
         public string Application { get; set; }
         [JsonProperty("assigned_to.name")]
         public string Owner { get; set; }        

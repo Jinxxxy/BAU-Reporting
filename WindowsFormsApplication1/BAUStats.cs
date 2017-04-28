@@ -20,6 +20,10 @@ namespace WindowsFormsApplication1
         public LoginScreen()
         {
             InitializeComponent();
+            TeamPicker.DataSource = new BindingSource(RequestStringBuilder.teamDictionary, null);
+            TeamPicker.DisplayMember = "Key";
+            TeamPicker.ValueMember = "Value";
+            
         }
         public string getUserName(TextBox _usernameInput)
         {
@@ -60,18 +64,27 @@ namespace WindowsFormsApplication1
                 return true;
             }
         }
-
+        public string getDate(DateTimePicker dtp)
+        {
+            DateTime dateTime = dtp.Value;
+            return dateTime.ToShortDateString();
+        }
         
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
+            
+            string[] startDateString = getDate(StartDateInput).Split('/');
+            string[] endDateString = getDate(EndDateInput).Split('/');
+            string teamName = ((KeyValuePair<string, string>) TeamPicker.SelectedItem).Value;
+            RequestStringBuilder rsb = new RequestStringBuilder();
             GettingServiceDetails gsd = new GettingServiceDetails();
             if(GettingServiceDetails.loginDetails.Count < 2)
             {
                 GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
                 GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
             }            
-            string value = gsd.MakeRequestToServiceNow("https://stepchangeprod.service-now.com/api/now/table/incident?sysparm_fields=subcategory%2Cassigned_to.name%2Cclosed_at%2Csys_created_on%2Cu_closure_code%2Cu_closure_sub_code%2Cassignment_group.name%2Cdescription%2Cshort_description%2Cpriority%2Cnumber&assignment_group=Dev%20-%20Advice%20%26%20Activations");
+            string value = gsd.MakeRequestToServiceNow(rsb.getRequestString(startDateString,endDateString, teamName));
             IncidentPage inc = new IncidentPage(value);
             inc.Show();
         }

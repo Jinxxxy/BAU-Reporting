@@ -40,6 +40,8 @@
             this.EndDateInput = new System.Windows.Forms.DateTimePicker();
             this.StartDateLabel = new System.Windows.Forms.Label();
             this.EndDateLabel = new System.Windows.Forms.Label();
+            this.TeamPicker = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(134, 251);
+            this.LoginButton.Location = new System.Drawing.Point(134, 297);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 3;
@@ -142,12 +144,31 @@
             this.EndDateLabel.TabIndex = 10;
             this.EndDateLabel.Text = "End Date";
             // 
+            // TeamPicker
+            // 
+            this.TeamPicker.FormattingEnabled = true;
+            this.TeamPicker.Location = new System.Drawing.Point(134, 246);
+            this.TeamPicker.Name = "TeamPicker";
+            this.TeamPicker.Size = new System.Drawing.Size(200, 43);
+            this.TeamPicker.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 246);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Team";
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(397, 286);
+            this.ClientSize = new System.Drawing.Size(397, 416);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TeamPicker);
             this.Controls.Add(this.EndDateLabel);
             this.Controls.Add(this.StartDateLabel);
             this.Controls.Add(this.EndDateInput);
@@ -181,6 +202,8 @@
         private System.Windows.Forms.DateTimePicker EndDateInput;
         private System.Windows.Forms.Label StartDateLabel;
         private System.Windows.Forms.Label EndDateLabel;
+        private System.Windows.Forms.ListBox TeamPicker;
+        private System.Windows.Forms.Label label1;
     }
 }
 

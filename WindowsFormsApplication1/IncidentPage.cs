@@ -32,13 +32,19 @@ namespace WindowsFormsApplication1
 
         private void ByApplication_Click(object sender, EventArgs e)
         {
-            ChartArea ca = new ChartArea();
+            ByApplicationChart ca = new ByApplicationChart();
             ca.Show();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void BySolution_Click(object sender, EventArgs e)
+        {
+            BySolutionChart bs = new BySolutionChart();
+            bs.Show();
         }
     }
 }
