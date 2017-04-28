@@ -57,11 +57,18 @@
     <Compile Include="BAUStats.Designer.cs">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChartArea.cs">
+    <Compile Include="ByApplicationChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChartArea.Designer.cs">
-      <DependentUpon>ChartArea.cs</DependentUpon>
+    <Compile Include="ByApplicationChart.Designer.cs">
+      <DependentUpon>ByApplicationChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BySolution.cs" />
+    <Compile Include="BySolutionChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BySolutionChart.Designer.cs">
+      <DependentUpon>BySolutionChart.cs</DependentUpon>
     </Compile>
     <Compile Include="IncidentClass.cs" />
     <Compile Include="IncidentPage.cs">
@@ -73,12 +80,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GettingServiceDetails.cs" />
+    <Compile Include="Services\RequestStringBuilder.cs" />
     <Compile Include="Services\_DateTime.cs" />
     <EmbeddedResource Include="BAUStats.resx">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChartArea.resx">
-      <DependentUpon>ChartArea.cs</DependentUpon>
+    <EmbeddedResource Include="ByApplicationChart.resx">
+      <DependentUpon>ByApplicationChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BySolutionChart.resx">
+      <DependentUpon>BySolutionChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidentPage.resx">
       <DependentUpon>IncidentPage.cs</DependentUpon>
