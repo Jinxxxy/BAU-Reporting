@@ -159,11 +159,11 @@ namespace WindowsFormsApplication1.Services
             switch (response.ReasonPhrase)
             {
                 case "Unauthorized":
-                    return false;
-                case "Complete":
                     return true;
-                default:
+                case "OK":
                     return false;
+                default:
+                    return true;
             }
         }
         public static Dictionary<string, string> loginDetails =  new Dictionary<string,string>();
@@ -183,12 +183,11 @@ namespace WindowsFormsApplication1.Services
             Task<HttpResponseMessage> response = client.GetAsync(_url);
             string result;
             ResponseResultTemplate rrt = buildResponseTemplate(response.Result);
-            if(checkResponseResult(response.Result))
+            if(!checkResponseResult(response.Result))
             {
                 try
                 {
                     rrt.returnedDataString = response.Result.Content.ReadAsStringAsync().Result;
-                    MessageBox.Show(rrt.returnedDataString);
                 }
                 catch (Exception err)
                 {
@@ -203,6 +202,14 @@ namespace WindowsFormsApplication1.Services
             
             return rrt;
         }
+        public SortableBindingList<IncidentClass> addDurationProperty(SortableBindingList<IncidentClass> incList)
+        {
+            foreach(IncidentClass inc in incList)
+            {
+                inc.Duration = (inc.ClosedDate - inc.OpenedDate).Value.Days;
+            }
+            return incList;
+        }
         public SortableBindingList<IncidentClass> serializeString(string _returnedString)
         {
             JToken obj = JObject.Parse(_returnedString)["result"];
@@ -215,7 +222,8 @@ namespace WindowsFormsApplication1.Services
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Data.ToString());                
+                MessageBox.Show(err.Data.ToString());
+                MessageBox.Show("Im here");       
                 MessageBox.Show(err.Message);
                 throw err;
             }

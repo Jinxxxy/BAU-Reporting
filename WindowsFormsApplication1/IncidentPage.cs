@@ -24,7 +24,8 @@ namespace WindowsFormsApplication1
             this.graphTypeList.DataSource = RequestStringBuilder.gdtList;
             dataGridView1.AutoGenerateColumns = true;
             BindingSource bs = new BindingSource();
-            bs.DataSource = gsd.serializeString(jsonString);            
+            
+            bs.DataSource = gsd.addDurationProperty(gsd.serializeString(jsonString));            
             for(var i  = 1; i < dataGridView1.Columns.Count; i++)
             {
                 dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.Automatic;

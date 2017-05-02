@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             gdt2.seriesName = "By Solution";
             GraphDataTemplate gdt3 = new GraphDataTemplate();
             gdt3.chartName = "By Duration";
-            gdt3.incidentPropertyName = "Business Duration";
+            gdt3.incidentPropertyName = "Duration";
             gdt3.seriesName = "By Duration";
             RequestStringBuilder.gdtList.Add(gdt1);
             RequestStringBuilder.gdtList.Add(gdt2);

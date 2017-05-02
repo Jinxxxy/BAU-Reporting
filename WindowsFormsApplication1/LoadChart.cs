@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
             chart1.Series[gdt.seriesName].Points.DataBindXY(incData.Keys, incData.Values);
             chart1.Titles.Add(gdt.chartName);
             chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.Series["Series 1"].IsValueShownAsLabel = true;
+            chart1.Series[gdt.seriesName].IsValueShownAsLabel = true;
         }
     }
 }

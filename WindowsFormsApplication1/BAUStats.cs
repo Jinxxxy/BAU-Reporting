@@ -30,11 +30,8 @@ namespace WindowsFormsApplication1
         {
             string rawUsername = _usernameInput.Text;
             Boolean blank = isStringNotBlank(rawUsername);
-            MessageBox.Show(rawUsername);
-            MessageBox.Show(this.isStringNotBlank(rawUsername).ToString());
             if (blank)
             {
-                MessageBox.Show("This is not blank");
                 return rawUsername;
             } else
             {                

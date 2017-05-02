@@ -14,6 +14,10 @@ namespace WindowsFormsApplication1
     [DataContract]
     class IncidentClass
     {
+        public IncidentClass()
+        {
+            
+        }
         [JsonProperty("cmdb_ci.name")]
         public string Application { get; set; }
         [JsonProperty("assigned_to.name")]
@@ -35,44 +39,8 @@ namespace WindowsFormsApplication1
         [JsonProperty("priority")]
         public string Priority { get; set; }
         [JsonProperty("number")]
-        public string IncidentID { get; set; }
-        /*public void getOwner()
-        {
-            if (this._Owner != null)
-            {
-                GettingServiceDetails gsd = new GettingServiceDetails();
-                string results = gsd.MakeRequestToServiceNow("https://stepchangeprod.service-now.com/api/now/table/sys_user?sysparm_fields=first_name%2C%20last_name&sysparm_limit=10&sysparm_view=&sys_id=" + this._Owner.Value);
-
-                JToken obj = JObject.Parse(results)["result"][0];
-                string newString = JsonConvert.SerializeObject(obj);
-                Dictionary<string, string> resultObject = JsonConvert.DeserializeObject<Dictionary<string, string>>(newString);
-
-                this.Owner = resultObject["first_name"] + " " + resultObject["last_name"];
-            }           
-        
-            return;
-            
-        }*/
+        public string IncidentID { get; set; }       
+        public int Duration { get; set; }
     }
-    public class AssignedTo
-    {
-        [JsonProperty("link")]
-        public string Link { get; set; }
-        [JsonProperty("value")]
-        public string Value { get; set; }
-    }
-    public class AssignmentGroup
-    {
-        [JsonProperty("link")]
-        public string Link { get; set; }
-        [JsonProperty("value")]
-        public string Value { get; set; }
-    }
-    public class ConfigurationItem
-    {
-        [JsonProperty("link")]
-        public string Link { get; set; }
-        [JsonProperty("value")]
-        public string Value { get; set; }
-    }
+    
 }
