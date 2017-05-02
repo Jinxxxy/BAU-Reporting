@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ClassModels;
 using WindowsFormsApplication1.Services;
 
 namespace WindowsFormsApplication1
@@ -19,6 +20,8 @@ namespace WindowsFormsApplication1
         {
             GettingServiceDetails gsd = new GettingServiceDetails();
             InitializeComponent();
+            graphTypeList.DisplayMember = "seriesName";
+            this.graphTypeList.DataSource = RequestStringBuilder.gdtList;
             dataGridView1.AutoGenerateColumns = true;
             BindingSource bs = new BindingSource();
             bs.DataSource = gsd.serializeString(jsonString);            
@@ -32,19 +35,9 @@ namespace WindowsFormsApplication1
 
         private void ByApplication_Click(object sender, EventArgs e)
         {
-            ByApplicationChart ca = new ByApplicationChart();
+            GraphDataTemplate gdt = (GraphDataTemplate) graphTypeList.SelectedItem;
+            LoadChart ca = new LoadChart(gdt);
             ca.Show();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void BySolution_Click(object sender, EventArgs e)
-        {
-            BySolutionChart bs = new BySolutionChart();
-            bs.Show();
         }
     }
 }

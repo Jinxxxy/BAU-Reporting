@@ -57,11 +57,11 @@
     <Compile Include="BAUStats.Designer.cs">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </Compile>
-    <Compile Include="ByApplicationChart.cs">
+    <Compile Include="LoadChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ByApplicationChart.Designer.cs">
-      <DependentUpon>ByApplicationChart.cs</DependentUpon>
+    <Compile Include="LoadChart.Designer.cs">
+      <DependentUpon>LoadChart.cs</DependentUpon>
     </Compile>
     <Compile Include="BySolution.cs" />
     <Compile Include="BySolutionChart.cs">
@@ -70,7 +70,9 @@
     <Compile Include="BySolutionChart.Designer.cs">
       <DependentUpon>BySolutionChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="IncidentClass.cs" />
+    <Compile Include="ClassModels\GraphDataTemplate.cs" />
+    <Compile Include="ClassModels\IncidentClass.cs" />
+    <Compile Include="ClassModels\ResponseResultTemplate.cs" />
     <Compile Include="IncidentPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,8 +87,8 @@
     <EmbeddedResource Include="BAUStats.resx">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ByApplicationChart.resx">
-      <DependentUpon>ByApplicationChart.cs</DependentUpon>
+    <EmbeddedResource Include="LoadChart.resx">
+      <DependentUpon>LoadChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BySolutionChart.resx">
       <DependentUpon>BySolutionChart.cs</DependentUpon>

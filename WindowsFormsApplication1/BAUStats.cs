@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using WindowsFormsApplication1.Services;
+using WindowsFormsApplication1.ClassModels;
 
 namespace WindowsFormsApplication1
 {
@@ -36,8 +37,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("This is not blank");
                 return rawUsername;
             } else
-            {
-                MessageBox.Show("This is blank");
+            {                
                 return rawUsername;
             }
         }
@@ -84,9 +84,15 @@ namespace WindowsFormsApplication1
                 GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
                 GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
             }            
-            string value = gsd.MakeRequestToServiceNow(rsb.getRequestString(startDateString,endDateString, teamName));
-            IncidentPage inc = new IncidentPage(value);
-            inc.Show();
+            ResponseResultTemplate value = gsd.MakeRequestToServiceNow(rsb.getRequestString(startDateString,endDateString, teamName));
+            if(value.error)
+            {
+                MessageBox.Show(value.errorMessage);
+            } else
+            {
+                IncidentPage inc = new IncidentPage(value.returnedDataString);
+                inc.Show();
+            }            
         }
     }
 }

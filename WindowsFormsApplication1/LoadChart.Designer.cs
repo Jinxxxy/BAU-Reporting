@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class ByApplicationChart
+    partial class LoadChart
     {
         /// <summary>
         /// Required designer variable.

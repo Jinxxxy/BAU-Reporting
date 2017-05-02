@@ -16,3 +16,5 @@ C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\bin\Debug\Newtonsoft.Json.
 C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.csprojResolveAssemblyReference.cache
 C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.dll
 C:\dev\newdev\WindowsFormsApplication1\BAU Unit Tests\obj\Debug\BAU Unit Tests.pdb
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Development\CSharp\BAU\BAU Unit Tests\bin\Debug\Newtonsoft.Json.xml

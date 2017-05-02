@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
+using WindowsFormsApplication1.ClassModels;
 
 namespace Library.Forms
 {
@@ -145,9 +146,29 @@ namespace WindowsFormsApplication1.Services
 {
     class GettingServiceDetails
     {
+        public ResponseResultTemplate buildResponseTemplate(HttpResponseMessage resp) 
+        {
+            ResponseResultTemplate rrt = new ResponseResultTemplate();
+            rrt.returnedReasonCode = resp.ReasonPhrase;
+            rrt.error = checkResponseResult(resp);
+            return rrt;
+        }
+        public bool checkResponseResult(HttpResponseMessage response)
+        {
+            
+            switch (response.ReasonPhrase)
+            {
+                case "Unauthorized":
+                    return false;
+                case "Complete":
+                    return true;
+                default:
+                    return false;
+            }
+        }
         public static Dictionary<string, string> loginDetails =  new Dictionary<string,string>();
         public static SortableBindingList<IncidentClass> incidentList = new SortableBindingList<IncidentClass>();
-        public string MakeRequestToServiceNow(string _url)
+        public ResponseResultTemplate MakeRequestToServiceNow(string _url)
         {
             string username = GettingServiceDetails.loginDetails["userName"];
             string password = GettingServiceDetails.loginDetails["password"];
@@ -159,32 +180,28 @@ namespace WindowsFormsApplication1.Services
                 "basic",
                 Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password))
                 );
-            var response = client.GetAsync(_url);
+            Task<HttpResponseMessage> response = client.GetAsync(_url);
             string result;
-            try
+            ResponseResultTemplate rrt = buildResponseTemplate(response.Result);
+            if(checkResponseResult(response.Result))
             {
-                result = response.Result.Content.ReadAsStringAsync().Result;
-            }
-            catch (Exception err)
+                try
+                {
+                    rrt.returnedDataString = response.Result.Content.ReadAsStringAsync().Result;
+                    MessageBox.Show(rrt.returnedDataString);
+                }
+                catch (Exception err)
+                {
+                    rrt.error = true;
+                    rrt.errorMessage = "Unable to parse JSON response";
+                }
+            } else
             {
-                MessageBox.Show(err.Message);
-                IncidentClass tic = new IncidentClass();
-                //tic.Application = "DCS";
-                tic.ClosedDate = DateTime.Now;
-                tic.OpenedDate = DateTime.Now;
-                tic.ClosureCode = "Closed";
-                tic.IncidentID = "INC148908";
-                tic.LongDescription = "This is the long description";
-                // tic.Owner = "Craig Berry";
-                tic.Priority = "High";
-                tic.ShortDescription = "This is the short description";
-                tic.SubClosureCode = "No Fault Founded";
-                // tic.Team = "Dev - Advice & Activations";
-                string ff = "[" + JsonConvert.SerializeObject(tic) + "]";
-                result = ff;
-                MessageBox.Show(result);
-            }
-            return result;
+                rrt.error = true;
+                rrt.errorMessage = "Username / Password combination is incorrect";
+            }       
+            
+            return rrt;
         }
         public SortableBindingList<IncidentClass> serializeString(string _returnedString)
         {

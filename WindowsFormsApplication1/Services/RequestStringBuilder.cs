@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using WindowsFormsApplication1.ClassModels;
 
 namespace WindowsFormsApplication1.Services
 {
@@ -17,7 +17,8 @@ namespace WindowsFormsApplication1.Services
         private string teamSelector = "assignment_group=";
         private string queryOpener = "sysparm_query=";
         private string closedConditionString = "incident_state=7";
-        public static Dictionary<string, string> teamDictionary = new Dictionary<string, string>();        
+        public static Dictionary<string, string> teamDictionary = new Dictionary<string, string>();
+        public static List<GraphDataTemplate> gdtList = new List<GraphDataTemplate>();
         private string startDateStringBuilder(string[] startDateArr)
         {
             string field = "closed_at>=";

@@ -18,7 +18,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             GettingServiceDetails gsd = new GettingServiceDetails();
-            Dictionary<string, int> incData = gsd.getYAxisNumbers(GettingServiceDetails.incidentList, gsd.getXAxisNames(GettingServiceDetails.incidentList, "ClosureCode"), "ClosureCode");
+            List<String> xAxis = gsd.getXAxisNames(GettingServiceDetails.incidentList, "ClosureCode");
+            Dictionary<string, int> incData = gsd.getYAxisNumbers(GettingServiceDetails.incidentList, xAxis , "ClosureCode");
             chart1.Series.Add("Series 1");
             chart1.Series["Series 1"].Points.DataBindXY(incData.Keys, incData.Values);
             chart1.Titles.Add("By Solution");

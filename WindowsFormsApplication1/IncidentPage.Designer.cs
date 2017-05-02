@@ -34,12 +34,11 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ByApplication = new System.Windows.Forms.Button();
-            this.BySolution = new System.Windows.Forms.Button();
-            this.ByDuration = new System.Windows.Forms.Button();
+            this.LoadChart = new System.Windows.Forms.Button();
             this.CommonIssues = new System.Windows.Forms.Button();
             this.IncidentListLabel = new System.Windows.Forms.Label();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.graphTypeList = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -89,40 +88,21 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Group By";
             // 
-            // ByApplication
+            // LoadChart
             // 
-            this.ByApplication.Location = new System.Drawing.Point(12, 415);
-            this.ByApplication.Name = "ByApplication";
-            this.ByApplication.Size = new System.Drawing.Size(137, 47);
-            this.ByApplication.TabIndex = 11;
-            this.ByApplication.Text = "By Application";
-            this.ByApplication.UseVisualStyleBackColor = true;
-            this.ByApplication.Click += new System.EventHandler(this.ByApplication_Click);
-            // 
-            // BySolution
-            // 
-            this.BySolution.Location = new System.Drawing.Point(155, 415);
-            this.BySolution.Name = "BySolution";
-            this.BySolution.Size = new System.Drawing.Size(137, 47);
-            this.BySolution.TabIndex = 12;
-            this.BySolution.Text = "By Solution";
-            this.BySolution.UseVisualStyleBackColor = true;
-            this.BySolution.Click += new System.EventHandler(this.BySolution_Click);
-            // 
-            // ByDuration
-            // 
-            this.ByDuration.Location = new System.Drawing.Point(298, 415);
-            this.ByDuration.Name = "ByDuration";
-            this.ByDuration.Size = new System.Drawing.Size(137, 47);
-            this.ByDuration.TabIndex = 13;
-            this.ByDuration.Text = "By Duration";
-            this.ByDuration.UseVisualStyleBackColor = true;
+            this.LoadChart.Location = new System.Drawing.Point(303, 415);
+            this.LoadChart.Name = "LoadChart";
+            this.LoadChart.Size = new System.Drawing.Size(137, 56);
+            this.LoadChart.TabIndex = 11;
+            this.LoadChart.Text = "Load Chart";
+            this.LoadChart.UseVisualStyleBackColor = true;
+            this.LoadChart.Click += new System.EventHandler(this.ByApplication_Click);
             // 
             // CommonIssues
             // 
             this.CommonIssues.Location = new System.Drawing.Point(466, 415);
             this.CommonIssues.Name = "CommonIssues";
-            this.CommonIssues.Size = new System.Drawing.Size(137, 47);
+            this.CommonIssues.Size = new System.Drawing.Size(137, 56);
             this.CommonIssues.TabIndex = 14;
             this.CommonIssues.Text = "Common Issues";
             this.CommonIssues.UseVisualStyleBackColor = true;
@@ -141,16 +121,23 @@
             // 
             this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
             // 
+            // graphTypeList
+            // 
+            this.graphTypeList.FormattingEnabled = true;
+            this.graphTypeList.Location = new System.Drawing.Point(16, 415);
+            this.graphTypeList.Name = "graphTypeList";
+            this.graphTypeList.Size = new System.Drawing.Size(268, 56);
+            this.graphTypeList.TabIndex = 16;
+            // 
             // IncidentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 474);
+            this.ClientSize = new System.Drawing.Size(618, 493);
+            this.Controls.Add(this.graphTypeList);
             this.Controls.Add(this.IncidentListLabel);
             this.Controls.Add(this.CommonIssues);
-            this.Controls.Add(this.ByDuration);
-            this.Controls.Add(this.BySolution);
-            this.Controls.Add(this.ByApplication);
+            this.Controls.Add(this.LoadChart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
@@ -174,10 +161,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource programBindingSource;
-        private System.Windows.Forms.Button ByApplication;
-        private System.Windows.Forms.Button BySolution;
-        private System.Windows.Forms.Button ByDuration;
+        private System.Windows.Forms.Button LoadChart;
         private System.Windows.Forms.Button CommonIssues;
         private System.Windows.Forms.Label IncidentListLabel;
+        private System.Windows.Forms.ListBox graphTypeList;
     }
 }
