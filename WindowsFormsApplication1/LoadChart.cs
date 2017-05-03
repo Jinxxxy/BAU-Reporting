@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.ClassModels;
+using WindowsFormsApplication1.HelperClasses;
 using WindowsFormsApplication1.Services;
 
 namespace WindowsFormsApplication1
@@ -19,10 +20,10 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             GettingServiceDetails gsd = new GettingServiceDetails();
-            List<string> xAxis = gsd.getXAxisNames(
+            List<string> xAxis = Chart.getXAxisNames(
                 GettingServiceDetails.incidentList, 
                 gdt.incidentPropertyName);
-            Dictionary<string, int> incData = gsd.getYAxisNumbers(
+            Dictionary<string, int> incData = Chart.getYAxisNumbers(
                 GettingServiceDetails.incidentList, 
                 xAxis, 
                 gdt.incidentPropertyName);

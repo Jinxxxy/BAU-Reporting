@@ -24,8 +24,10 @@ namespace WindowsFormsApplication1
         public string Owner { get; set; }        
         [JsonProperty("closed_at")]
         public DateTime? ClosedDate { get; set; }
+        public DateTime ShortClosedDate { get; set; }
         [JsonProperty("sys_created_on")]
         public DateTime? OpenedDate { get; set; }
+        public DateTime ShortOpenedDate { get; set; }
         [JsonProperty("u_closure_code")]
         public string ClosureCode { get; set; }
         [JsonProperty("u_closure_sub_code")]

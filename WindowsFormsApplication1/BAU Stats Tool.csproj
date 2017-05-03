@@ -57,6 +57,8 @@
     <Compile Include="BAUStats.Designer.cs">
       <DependentUpon>BAUStats.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperClasses\Chart.cs" />
+    <Compile Include="HelperClasses\SortableBindingList.cs" />
     <Compile Include="LoadChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,12 +66,6 @@
       <DependentUpon>LoadChart.cs</DependentUpon>
     </Compile>
     <Compile Include="BySolution.cs" />
-    <Compile Include="BySolutionChart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BySolutionChart.Designer.cs">
-      <DependentUpon>BySolutionChart.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClassModels\GraphDataTemplate.cs" />
     <Compile Include="ClassModels\IncidentClass.cs" />
     <Compile Include="ClassModels\ResponseResultTemplate.cs" />
@@ -89,9 +85,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadChart.resx">
       <DependentUpon>LoadChart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BySolutionChart.resx">
-      <DependentUpon>BySolutionChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IncidentPage.resx">
       <DependentUpon>IncidentPage.cs</DependentUpon>

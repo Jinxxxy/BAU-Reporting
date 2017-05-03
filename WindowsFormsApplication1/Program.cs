@@ -27,8 +27,7 @@ namespace WindowsFormsApplication1
             GraphDataTemplate gdt1 = new GraphDataTemplate();
             gdt1.chartName = "By Application";
             gdt1.incidentPropertyName = "Application";
-            gdt1.seriesName = "By Application";
-            
+            gdt1.seriesName = "By Application";            
             GraphDataTemplate gdt2 = new GraphDataTemplate();
             gdt2.chartName = "By Solution";
             gdt2.incidentPropertyName = "ClosureCode";
@@ -37,9 +36,19 @@ namespace WindowsFormsApplication1
             gdt3.chartName = "By Duration";
             gdt3.incidentPropertyName = "Duration";
             gdt3.seriesName = "By Duration";
+            GraphDataTemplate gdt4 = new GraphDataTemplate();
+            gdt4.chartName = "By Priority";
+            gdt4.incidentPropertyName = "Priority";
+            gdt4.seriesName = "By Priority";
+            GraphDataTemplate gdt5 = new GraphDataTemplate();
+            gdt5.chartName = "By Closed Date";
+            gdt5.incidentPropertyName = "ClosedDate";
+            gdt5.seriesName = "By Closed Date";
             RequestStringBuilder.gdtList.Add(gdt1);
             RequestStringBuilder.gdtList.Add(gdt2);
             RequestStringBuilder.gdtList.Add(gdt3);
+            RequestStringBuilder.gdtList.Add(gdt4);
+            RequestStringBuilder.gdtList.Add(gdt5);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginScreen());
