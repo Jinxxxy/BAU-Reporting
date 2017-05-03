@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using WindowsFormsApplication1.Services;
 using WindowsFormsApplication1.ClassModels;
+using WindowsFormsApplication1.HelperClasses;
 
 namespace WindowsFormsApplication1
 {
@@ -34,7 +35,7 @@ namespace WindowsFormsApplication1
             gdt2.seriesName = "By Solution";
             GraphDataTemplate gdt3 = new GraphDataTemplate();
             gdt3.chartName = "By Duration";
-            gdt3.incidentPropertyName = "Duration";
+            gdt3.incidentPropertyName = "DurationName";
             gdt3.seriesName = "By Duration";
             GraphDataTemplate gdt4 = new GraphDataTemplate();
             gdt4.chartName = "By Priority";
@@ -44,11 +45,44 @@ namespace WindowsFormsApplication1
             gdt5.chartName = "By Closed Date";
             gdt5.incidentPropertyName = "ClosedDate";
             gdt5.seriesName = "By Closed Date";
-            RequestStringBuilder.gdtList.Add(gdt1);
-            RequestStringBuilder.gdtList.Add(gdt2);
-            RequestStringBuilder.gdtList.Add(gdt3);
-            RequestStringBuilder.gdtList.Add(gdt4);
-            RequestStringBuilder.gdtList.Add(gdt5);
+            Chart.gdtList.Add(gdt1);
+            Chart.gdtList.Add(gdt2);
+            Chart.gdtList.Add(gdt3);
+            Chart.gdtList.Add(gdt4);
+            Chart.gdtList.Add(gdt5);
+
+            DurationInterval di1 = new DurationInterval();
+            di1.intervalName = "Less than a day";
+            di1.minValue = 0;
+            di1.maxValue = 1;
+            DurationInterval di2= new DurationInterval();
+            di2.intervalName = "1-2 Days";
+            di2.minValue = 1;
+            di2.maxValue = 2;
+            DurationInterval di3 = new DurationInterval();
+            di3.intervalName = "2-3 Days";
+            di3.minValue = 2;
+            di3.maxValue = 3;
+            DurationInterval di4 = new DurationInterval();
+            di4.intervalName = "Up to a week";
+            di4.minValue = 4;
+            di4.maxValue = 7;
+            DurationInterval di5 = new DurationInterval();
+            di5.intervalName = "Up to a month";
+            di5.minValue = 8;
+            di5.maxValue = 30;
+            DurationInterval di6 = new DurationInterval();
+            di6.intervalName = "Over a month";
+            di6.minValue = 31;
+            di6.maxValue = 100000000;
+            Chart.intervalList.Add(di1);
+            Chart.intervalList.Add(di2);
+            Chart.intervalList.Add(di3);
+            Chart.intervalList.Add(di4);
+            Chart.intervalList.Add(di5);
+            Chart.intervalList.Add(di6);
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginScreen());

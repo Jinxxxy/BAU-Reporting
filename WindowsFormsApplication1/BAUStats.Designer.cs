@@ -67,6 +67,7 @@
             // 
             // LoginButton
             // 
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginButton.Location = new System.Drawing.Point(134, 297);
             this.LoginButton.Name = "LoginButton";
@@ -74,6 +75,7 @@
             this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Visible = false;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // PasswordInput
@@ -114,52 +116,64 @@
             // 
             // StartDateInput
             // 
+            this.StartDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.StartDateInput.Location = new System.Drawing.Point(134, 183);
             this.StartDateInput.Name = "StartDateInput";
             this.StartDateInput.Size = new System.Drawing.Size(200, 21);
             this.StartDateInput.TabIndex = 7;
+            this.StartDateInput.Visible = false;
             // 
             // EndDateInput
             // 
+            this.EndDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.EndDateInput.Location = new System.Drawing.Point(134, 216);
             this.EndDateInput.Name = "EndDateInput";
             this.EndDateInput.Size = new System.Drawing.Size(200, 21);
             this.EndDateInput.TabIndex = 8;
+            this.EndDateInput.Visible = false;
             // 
             // StartDateLabel
             // 
             this.StartDateLabel.AutoSize = true;
+            this.StartDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.StartDateLabel.Location = new System.Drawing.Point(68, 189);
             this.StartDateLabel.Name = "StartDateLabel";
             this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
             this.StartDateLabel.TabIndex = 9;
             this.StartDateLabel.Text = "Start Date";
+            this.StartDateLabel.Visible = false;
             // 
             // EndDateLabel
             // 
             this.EndDateLabel.AutoSize = true;
+            this.EndDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.EndDateLabel.Location = new System.Drawing.Point(72, 224);
             this.EndDateLabel.Name = "EndDateLabel";
             this.EndDateLabel.Size = new System.Drawing.Size(48, 13);
             this.EndDateLabel.TabIndex = 10;
             this.EndDateLabel.Text = "End Date";
+            this.EndDateLabel.Visible = false;
             // 
             // TeamPicker
             // 
+            this.TeamPicker.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TeamPicker.FormattingEnabled = true;
             this.TeamPicker.Location = new System.Drawing.Point(134, 246);
             this.TeamPicker.Name = "TeamPicker";
             this.TeamPicker.Size = new System.Drawing.Size(200, 43);
             this.TeamPicker.TabIndex = 11;
+            this.TeamPicker.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label1.Location = new System.Drawing.Point(72, 246);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "Team";
+            this.label1.Visible = false;
             // 
             // LoginScreen
             // 

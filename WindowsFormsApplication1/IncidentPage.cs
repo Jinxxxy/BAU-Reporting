@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.ClassModels;
+using WindowsFormsApplication1.HelperClasses;
 using WindowsFormsApplication1.Services;
 
 namespace WindowsFormsApplication1
@@ -21,11 +22,11 @@ namespace WindowsFormsApplication1
             GettingServiceDetails gsd = new GettingServiceDetails();
             InitializeComponent();
             graphTypeList.DisplayMember = "seriesName";
-            this.graphTypeList.DataSource = RequestStringBuilder.gdtList;
+            graphTypeList.DataSource = Chart.gdtList;
             dataGridView1.AutoGenerateColumns = true;
             BindingSource bs = new BindingSource();
             
-            bs.DataSource = gsd.addDurationProperty(gsd.serializeString(jsonString));            
+            bs.DataSource = gsd.addDurationName(gsd.addDurationProperty(gsd.serializeIncidentString(jsonString)), Chart.intervalList);            
             for(var i  = 1; i < dataGridView1.Columns.Count; i++)
             {
                 dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.Automatic;

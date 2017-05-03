@@ -13,11 +13,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
 using WindowsFormsApplication1.ClassModels;
+using WindowsFormsApplication1.HelperClasses;
 
 namespace WindowsFormsApplication1.Services
 {
     class GettingServiceDetails
-    {   
+    {
+        public static Dictionary<string, string> loginDetails = new Dictionary<string, string>();
         public ResponseResultTemplate buildResponseTemplate(HttpResponseMessage resp) 
         {
             ResponseResultTemplate rrt = new ResponseResultTemplate();
@@ -40,7 +42,7 @@ namespace WindowsFormsApplication1.Services
                     return true;
             }
         }
-        public static Dictionary<string, string> loginDetails =  new Dictionary<string,string>();
+        
         public static SortableBindingList<IncidentClass> incidentList = new SortableBindingList<IncidentClass>();
         public ResponseResultTemplate MakeRequestToServiceNow(string _url)
         {
@@ -95,7 +97,22 @@ namespace WindowsFormsApplication1.Services
             }
             return incList;
         }
-        public SortableBindingList<IncidentClass> serializeString(string _returnedString)
+        public SortableBindingList<IncidentClass> addDurationName(SortableBindingList<IncidentClass> incList, List<DurationInterval> diList)
+        {
+            SortableBindingList<IncidentClass> _incList = incList;
+            foreach (DurationInterval di in diList)
+            {
+                foreach (IncidentClass i in incList)
+                {
+                    if (Chart.checkMinMax(i.Duration, di))
+                    {
+                        i.DurationName = di.intervalName;
+                    }
+                }                
+            }
+            return _incList;
+        }
+        public SortableBindingList<IncidentClass> serializeIncidentString(string _returnedString)
         {
             JToken obj = JObject.Parse(_returnedString)["result"];
             string newString = JsonConvert.SerializeObject(obj);
@@ -115,6 +132,30 @@ namespace WindowsFormsApplication1.Services
                 MessageBox.Show(err.Message);
                 throw err;
             }
+        }
+        public Dictionary<string, string> serializeTeamString(string _returnedString)
+        {
+            
+            JToken obj = JObject.Parse(_returnedString)["result"];
+            string newString = JsonConvert.SerializeObject(obj);
+            try
+            {
+                Dictionary<string,string> dataSource = JsonConvert.DeserializeObject<Dictionary<string, string>>(newString, new JsonSerializerSettings
+                {
+                    DateFormatString = "d/MMMM/yyyy"
+                });
+                RequestStringBuilder.teamDictionary = dataSource;
+                return dataSource;
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Data.ToString());
+                MessageBox.Show("Im here");
+                MessageBox.Show(err.Message);
+                throw err;
+            }
+
+
         }
         public object GetPropValue(IncidentClass src, string propName)
         {

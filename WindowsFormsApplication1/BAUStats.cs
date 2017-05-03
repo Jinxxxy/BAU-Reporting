@@ -67,29 +67,50 @@ namespace WindowsFormsApplication1
             return dateTime.ToShortDateString();
         }
         
-
-        private async void LoginButton_Click(object sender, EventArgs e)
+        private Dictionary<string, string> getTeams(ResponseResultTemplate rrt)
         {
-            
+            if (rrt.error)
+            {
+                MessageBox.Show(rrt.errorMessage);
+            };
+        }
+
+        private void loadIncidentScreen()
+        {
             string[] startDateString = getDate(StartDateInput).Split('/');
             string[] endDateString = getDate(EndDateInput).Split('/');
-            string teamName = ((KeyValuePair<string, string>) TeamPicker.SelectedItem).Value;
+            string teamName = ((KeyValuePair<string, string>)TeamPicker.SelectedItem).Value;
             RequestStringBuilder rsb = new RequestStringBuilder();
             GettingServiceDetails gsd = new GettingServiceDetails();
-            if(GettingServiceDetails.loginDetails.Count < 2)
+            if (GettingServiceDetails.loginDetails.Count < 2)
             {
                 GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
                 GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
-            }            
-            ResponseResultTemplate value = gsd.MakeRequestToServiceNow(rsb.getRequestString(startDateString,endDateString, teamName));
-            if(value.error)
+            }
+            ResponseResultTemplate value = gsd.MakeRequestToServiceNow(rsb.getIncidentRequestString(startDateString, endDateString, teamName));
+            if (value.error)
             {
                 MessageBox.Show(value.errorMessage);
-            } else
+            }
+            else
             {
                 IncidentPage inc = new IncidentPage(value.returnedDataString);
                 inc.Show();
-            }            
+            }
+        }
+
+        private async void LoginButton_Click(object sender, EventArgs e)
+        {
+            GettingServiceDetails gsd = new GettingServiceDetails();
+            RequestStringBuilder rsb = new RequestStringBuilder();            
+            ResponseResultTemplate teamData = gsd.MakeRequestToServiceNow(rsb.getTeamRequestString());
+            if (teamData.error)
+            {
+                MessageBox.Show(teamData.errorMessage);
+            } else
+            {
+
+            }
         }
     }
 }

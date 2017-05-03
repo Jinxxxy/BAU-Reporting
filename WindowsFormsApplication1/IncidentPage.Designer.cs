@@ -35,6 +35,7 @@
             this.IncidentListLabel = new System.Windows.Forms.Label();
             this.graphTypeList = new System.Windows.Forms.ListBox();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,14 +48,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(861, 358);
             this.dataGridView1.TabIndex = 0;
             // 
             // LoadChart
             // 
-            this.LoadChart.Location = new System.Drawing.Point(303, 415);
+            this.LoadChart.Location = new System.Drawing.Point(12, 454);
             this.LoadChart.Name = "LoadChart";
-            this.LoadChart.Size = new System.Drawing.Size(137, 56);
+            this.LoadChart.Size = new System.Drawing.Size(156, 56);
             this.LoadChart.TabIndex = 11;
             this.LoadChart.Text = "Load Chart";
             this.LoadChart.UseVisualStyleBackColor = true;
@@ -62,9 +63,9 @@
             // 
             // CommonIssues
             // 
-            this.CommonIssues.Location = new System.Drawing.Point(466, 415);
+            this.CommonIssues.Location = new System.Drawing.Point(718, 454);
             this.CommonIssues.Name = "CommonIssues";
-            this.CommonIssues.Size = new System.Drawing.Size(137, 56);
+            this.CommonIssues.Size = new System.Drawing.Size(155, 56);
             this.CommonIssues.TabIndex = 14;
             this.CommonIssues.Text = "Common Issues";
             this.CommonIssues.UseVisualStyleBackColor = true;
@@ -73,7 +74,7 @@
             // 
             this.IncidentListLabel.AutoSize = true;
             this.IncidentListLabel.Font = new System.Drawing.Font("Corbel", 24F);
-            this.IncidentListLabel.Location = new System.Drawing.Point(208, 9);
+            this.IncidentListLabel.Location = new System.Drawing.Point(337, 9);
             this.IncidentListLabel.Name = "IncidentListLabel";
             this.IncidentListLabel.Size = new System.Drawing.Size(178, 39);
             this.IncidentListLabel.TabIndex = 15;
@@ -82,7 +83,7 @@
             // graphTypeList
             // 
             this.graphTypeList.FormattingEnabled = true;
-            this.graphTypeList.Location = new System.Drawing.Point(16, 415);
+            this.graphTypeList.Location = new System.Drawing.Point(308, 454);
             this.graphTypeList.Name = "graphTypeList";
             this.graphTypeList.Size = new System.Drawing.Size(268, 56);
             this.graphTypeList.TabIndex = 16;
@@ -91,11 +92,21 @@
             // 
             this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(412, 438);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Chart Type";
+            // 
             // IncidentPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 493);
+            this.ClientSize = new System.Drawing.Size(885, 522);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.graphTypeList);
             this.Controls.Add(this.IncidentListLabel);
             this.Controls.Add(this.CommonIssues);
@@ -119,5 +130,6 @@
         private System.Windows.Forms.Button CommonIssues;
         private System.Windows.Forms.Label IncidentListLabel;
         private System.Windows.Forms.ListBox graphTypeList;
+        private System.Windows.Forms.Label label1;
     }
 }
