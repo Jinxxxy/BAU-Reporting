@@ -32,6 +32,9 @@ namespace WindowsFormsApplication1
             chart1.Titles.Add(gdt.chartName);
             chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.Series[gdt.seriesName].IsValueShownAsLabel = true;
+            chart1.Series[gdt.seriesName].AxisLabel = gdt.xAxisLabelName;
+            chart1.ChartAreas[0].AxisX.Title = gdt.xAxisLabelName;
+            chart1.ChartAreas[0].AxisY.Title = "Number of incidents";            
         }
     }
 }

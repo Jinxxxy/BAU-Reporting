@@ -31,18 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.StartDateInput = new System.Windows.Forms.DateTimePicker();
-            this.EndDateInput = new System.Windows.Forms.DateTimePicker();
-            this.StartDateLabel = new System.Windows.Forms.Label();
-            this.EndDateLabel = new System.Windows.Forms.Label();
+            this.DetailsPanel = new System.Windows.Forms.Panel();
+            this.TeamPickerLabel = new System.Windows.Forms.Label();
             this.TeamPicker = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.EndDateLabel = new System.Windows.Forms.Label();
+            this.StartDateLabel = new System.Windows.Forms.Label();
+            this.EndDateInput = new System.Windows.Forms.DateTimePicker();
+            this.StartDateInput = new System.Windows.Forms.DateTimePicker();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.GetIncidents = new System.Windows.Forms.Button();
+            this.StatusPanel = new System.Windows.Forms.Panel();
+            this.StatusLabel = new System.Windows.Forms.Label();
+            this.StatusBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.DetailsPanel.SuspendLayout();
+            this.StatusPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // UsernameLabel
@@ -64,19 +71,6 @@
             this.PasswordLabel.Size = new System.Drawing.Size(50, 13);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(134, 297);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 3;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Visible = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // PasswordInput
             // 
@@ -114,90 +108,150 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // StartDateInput
+            // DetailsPanel
             // 
-            this.StartDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.StartDateInput.Location = new System.Drawing.Point(134, 183);
-            this.StartDateInput.Name = "StartDateInput";
-            this.StartDateInput.Size = new System.Drawing.Size(200, 21);
-            this.StartDateInput.TabIndex = 7;
-            this.StartDateInput.Visible = false;
+            this.DetailsPanel.Controls.Add(this.GetIncidents);
+            this.DetailsPanel.Controls.Add(this.TeamPickerLabel);
+            this.DetailsPanel.Controls.Add(this.TeamPicker);
+            this.DetailsPanel.Controls.Add(this.EndDateLabel);
+            this.DetailsPanel.Controls.Add(this.StartDateLabel);
+            this.DetailsPanel.Controls.Add(this.EndDateInput);
+            this.DetailsPanel.Controls.Add(this.StartDateInput);
+            this.DetailsPanel.Location = new System.Drawing.Point(15, 175);
+            this.DetailsPanel.Name = "DetailsPanel";
+            this.DetailsPanel.Size = new System.Drawing.Size(377, 151);
+            this.DetailsPanel.TabIndex = 13;
+            this.DetailsPanel.Visible = false;
             // 
-            // EndDateInput
+            // TeamPickerLabel
             // 
-            this.EndDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.EndDateInput.Location = new System.Drawing.Point(134, 216);
-            this.EndDateInput.Name = "EndDateInput";
-            this.EndDateInput.Size = new System.Drawing.Size(200, 21);
-            this.EndDateInput.TabIndex = 8;
-            this.EndDateInput.Visible = false;
-            // 
-            // StartDateLabel
-            // 
-            this.StartDateLabel.AutoSize = true;
-            this.StartDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.StartDateLabel.Location = new System.Drawing.Point(68, 189);
-            this.StartDateLabel.Name = "StartDateLabel";
-            this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
-            this.StartDateLabel.TabIndex = 9;
-            this.StartDateLabel.Text = "Start Date";
-            this.StartDateLabel.Visible = false;
-            // 
-            // EndDateLabel
-            // 
-            this.EndDateLabel.AutoSize = true;
-            this.EndDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.EndDateLabel.Location = new System.Drawing.Point(72, 224);
-            this.EndDateLabel.Name = "EndDateLabel";
-            this.EndDateLabel.Size = new System.Drawing.Size(48, 13);
-            this.EndDateLabel.TabIndex = 10;
-            this.EndDateLabel.Text = "End Date";
-            this.EndDateLabel.Visible = false;
+            this.TeamPickerLabel.AutoSize = true;
+            this.TeamPickerLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TeamPickerLabel.Location = new System.Drawing.Point(57, 71);
+            this.TeamPickerLabel.Name = "TeamPickerLabel";
+            this.TeamPickerLabel.Size = new System.Drawing.Size(31, 13);
+            this.TeamPickerLabel.TabIndex = 19;
+            this.TeamPickerLabel.Text = "Team";
             // 
             // TeamPicker
             // 
             this.TeamPicker.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.TeamPicker.FormattingEnabled = true;
-            this.TeamPicker.Location = new System.Drawing.Point(134, 246);
+            this.TeamPicker.Location = new System.Drawing.Point(119, 71);
             this.TeamPicker.Name = "TeamPicker";
             this.TeamPicker.Size = new System.Drawing.Size(200, 43);
-            this.TeamPicker.TabIndex = 11;
-            this.TeamPicker.Visible = false;
+            this.TeamPicker.TabIndex = 18;
             // 
-            // label1
+            // EndDateLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label1.Location = new System.Drawing.Point(72, 246);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Team";
-            this.label1.Visible = false;
+            this.EndDateLabel.AutoSize = true;
+            this.EndDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.EndDateLabel.Location = new System.Drawing.Point(57, 49);
+            this.EndDateLabel.Name = "EndDateLabel";
+            this.EndDateLabel.Size = new System.Drawing.Size(48, 13);
+            this.EndDateLabel.TabIndex = 17;
+            this.EndDateLabel.Text = "End Date";
+            // 
+            // StartDateLabel
+            // 
+            this.StartDateLabel.AutoSize = true;
+            this.StartDateLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.StartDateLabel.Location = new System.Drawing.Point(53, 14);
+            this.StartDateLabel.Name = "StartDateLabel";
+            this.StartDateLabel.Size = new System.Drawing.Size(53, 13);
+            this.StartDateLabel.TabIndex = 16;
+            this.StartDateLabel.Text = "Start Date";
+            // 
+            // EndDateInput
+            // 
+            this.EndDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.EndDateInput.Location = new System.Drawing.Point(119, 41);
+            this.EndDateInput.Name = "EndDateInput";
+            this.EndDateInput.Size = new System.Drawing.Size(200, 21);
+            this.EndDateInput.TabIndex = 15;
+            // 
+            // StartDateInput
+            // 
+            this.StartDateInput.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.StartDateInput.Location = new System.Drawing.Point(119, 8);
+            this.StartDateInput.Name = "StartDateInput";
+            this.StartDateInput.Size = new System.Drawing.Size(200, 21);
+            this.StartDateInput.TabIndex = 14;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginButton.Location = new System.Drawing.Point(134, 332);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.TabIndex = 13;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click_1);
+            // 
+            // GetIncidents
+            // 
+            this.GetIncidents.Location = new System.Drawing.Point(119, 120);
+            this.GetIncidents.Name = "GetIncidents";
+            this.GetIncidents.Size = new System.Drawing.Size(75, 23);
+            this.GetIncidents.TabIndex = 20;
+            this.GetIncidents.Text = "Get Incidents";
+            this.GetIncidents.UseVisualStyleBackColor = true;
+            this.GetIncidents.Click += new System.EventHandler(this.GetIncidents_Click);
+            // 
+            // StatusPanel
+            // 
+            this.StatusPanel.Controls.Add(this.StatusBox);
+            this.StatusPanel.Controls.Add(this.StatusLabel);
+            this.StatusPanel.Location = new System.Drawing.Point(15, 361);
+            this.StatusPanel.Name = "StatusPanel";
+            this.StatusPanel.Size = new System.Drawing.Size(377, 82);
+            this.StatusPanel.TabIndex = 14;
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Font = new System.Drawing.Font("Corbel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
+            this.StatusLabel.Location = new System.Drawing.Point(38, 5);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 27);
+            this.StatusLabel.TabIndex = 0;
+            // 
+            // StatusBox
+            // 
+            this.StatusBox.Font = new System.Drawing.Font("Corbel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusBox.ForeColor = System.Drawing.Color.Red;
+            this.StatusBox.Location = new System.Drawing.Point(5, 8);
+            this.StatusBox.Multiline = true;
+            this.StatusBox.Name = "StatusBox";
+            this.StatusBox.Size = new System.Drawing.Size(367, 37);
+            this.StatusBox.TabIndex = 1;
             // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(397, 416);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TeamPicker);
-            this.Controls.Add(this.EndDateLabel);
-            this.Controls.Add(this.StartDateLabel);
-            this.Controls.Add(this.EndDateInput);
-            this.Controls.Add(this.StartDateInput);
+            this.ClientSize = new System.Drawing.Size(397, 455);
+            this.Controls.Add(this.StatusPanel);
+            this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.UsernameInput);
             this.Controls.Add(this.PasswordInput);
-            this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordLabel);
+            this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.UsernameLabel);
             this.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "LoginScreen";
             this.Text = "BAU Monthly Reporting Tool ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.DetailsPanel.ResumeLayout(false);
+            this.DetailsPanel.PerformLayout();
+            this.StatusPanel.ResumeLayout(false);
+            this.StatusPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,17 +261,22 @@
 
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.Button LoginButton;
         public System.Windows.Forms.TextBox PasswordInput;
         public System.Windows.Forms.TextBox UsernameInput;
         private System.Windows.Forms.Label HeaderLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker StartDateInput;
-        private System.Windows.Forms.DateTimePicker EndDateInput;
-        private System.Windows.Forms.Label StartDateLabel;
-        private System.Windows.Forms.Label EndDateLabel;
+        private System.Windows.Forms.Panel DetailsPanel;
+        private System.Windows.Forms.Label TeamPickerLabel;
         private System.Windows.Forms.ListBox TeamPicker;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label EndDateLabel;
+        private System.Windows.Forms.Label StartDateLabel;
+        private System.Windows.Forms.DateTimePicker EndDateInput;
+        private System.Windows.Forms.DateTimePicker StartDateInput;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Button GetIncidents;
+        private System.Windows.Forms.Panel StatusPanel;
+        private System.Windows.Forms.Label StatusLabel;
+        private System.Windows.Forms.TextBox StatusBox;
     }
 }
 

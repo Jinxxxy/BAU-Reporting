@@ -21,7 +21,9 @@ namespace WindowsFormsApplication1
         public LoginScreen()
         {
             InitializeComponent();
-            TeamPicker.DataSource = new BindingSource(RequestStringBuilder.teamDictionary, null);
+            GettingServiceDetails gsd = new GettingServiceDetails();
+            RequestStringBuilder rsb = new RequestStringBuilder();
+            
             TeamPicker.DisplayMember = "Key";
             TeamPicker.ValueMember = "Value";
             
@@ -67,12 +69,18 @@ namespace WindowsFormsApplication1
             return dateTime.ToShortDateString();
         }
         
-        private Dictionary<string, string> getTeams(ResponseResultTemplate rrt)
+        private Dictionary<string, string> serializeTeams(ResponseResultTemplate rrt)
         {
+            Dictionary<string, string> _returnDict = new Dictionary<string, string>();
             if (rrt.error)
             {
                 MessageBox.Show(rrt.errorMessage);
-            };
+            } else
+            {
+                GettingServiceDetails gsd = new GettingServiceDetails();
+                _returnDict = gsd.serializeTeamString(rrt.returnedDataString);
+            }
+            return _returnDict;
         }
 
         private void loadIncidentScreen()
@@ -90,7 +98,7 @@ namespace WindowsFormsApplication1
             ResponseResultTemplate value = gsd.MakeRequestToServiceNow(rsb.getIncidentRequestString(startDateString, endDateString, teamName));
             if (value.error)
             {
-                MessageBox.Show(value.errorMessage);
+                StatusLabel.Text = value.errorMessage;
             }
             else
             {
@@ -99,18 +107,33 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private async void LoginButton_Click(object sender, EventArgs e)
+        private async void LoginButton_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("This is working");
             GettingServiceDetails gsd = new GettingServiceDetails();
-            RequestStringBuilder rsb = new RequestStringBuilder();            
+            RequestStringBuilder rsb = new RequestStringBuilder();
+            if (GettingServiceDetails.loginDetails.Count < 2)
+            {
+                GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
+                GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
+            }
             ResponseResultTemplate teamData = gsd.MakeRequestToServiceNow(rsb.getTeamRequestString());
             if (teamData.error)
             {
-                MessageBox.Show(teamData.errorMessage);
-            } else
-            {
-
+                StatusBox.Text = teamData.errorMessage;
+                
             }
+            else
+            {
+                TeamPicker.DataSource = serializeTeams(gsd.MakeRequestToServiceNow(rsb.getTeamRequestString()));
+                DetailsPanel.Visible = true;
+                LoginButton.Visible = false;
+            }
+        }
+
+        private void GetIncidents_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

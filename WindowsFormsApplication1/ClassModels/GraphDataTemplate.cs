@@ -11,5 +11,6 @@ namespace WindowsFormsApplication1.ClassModels
         public string seriesName { get; set; }
         public string chartName { get; set; }
         public string incidentPropertyName { get; set; }
+        public string xAxisLabelName { get; set; }
     }
 }
