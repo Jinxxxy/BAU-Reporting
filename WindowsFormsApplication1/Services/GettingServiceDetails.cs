@@ -133,14 +133,14 @@ namespace WindowsFormsApplication1.Services
                 throw err;
             }
         }
-        public Dictionary<string, string> serializeTeamString(string _returnedString)
+        public List<TeamItem> serializeTeamString(string _returnedString)
         {
             
             JToken obj = JObject.Parse(_returnedString)["result"];
             string newString = JsonConvert.SerializeObject(obj);
             try
             {
-                Dictionary<string,string> dataSource = JsonConvert.DeserializeObject<Dictionary<string, string>>(newString, new JsonSerializerSettings
+                List<TeamItem> dataSource = JsonConvert.DeserializeObject<List<TeamItem>>(newString, new JsonSerializerSettings
                 {
                     DateFormatString = "d/MMMM/yyyy"
                 });

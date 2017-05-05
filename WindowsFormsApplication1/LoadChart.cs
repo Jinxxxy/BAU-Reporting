@@ -27,14 +27,14 @@ namespace WindowsFormsApplication1
                 GettingServiceDetails.incidentList, 
                 xAxis, 
                 gdt.incidentPropertyName);
-            chart1.Series.Add(gdt.seriesName);
-            chart1.Series[gdt.seriesName].Points.DataBindXY(incData.Keys, incData.Values);
-            chart1.Titles.Add(gdt.chartName);
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.Series[gdt.seriesName].IsValueShownAsLabel = true;
-            chart1.Series[gdt.seriesName].AxisLabel = gdt.xAxisLabelName;
-            chart1.ChartAreas[0].AxisX.Title = gdt.xAxisLabelName;
-            chart1.ChartAreas[0].AxisY.Title = "Number of incidents";            
+            MainChart.Series.Add(gdt.seriesName);
+            MainChart.Series[gdt.seriesName].Points.DataBindXY(incData.Keys, incData.Values);
+            MainChart.Titles.Add(gdt.chartName);
+            MainChart.ChartAreas[0].AxisX.Interval = 1;
+            MainChart.Series[gdt.seriesName].IsValueShownAsLabel = true;
+            MainChart.Series[gdt.seriesName].AxisLabel = gdt.xAxisLabelName;
+            MainChart.ChartAreas[0].AxisX.Title = gdt.xAxisLabelName;
+            MainChart.ChartAreas[0].AxisY.Title = "Number of incidents";            
         }
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1.Services
         private string closedConditionString = "incident_state=7";
         private string teamTableName = "sys_user_group?";
         private string teamProjection = "sysparm_fields=name,sys_id";
-        public static Dictionary<string, string> teamDictionary = new Dictionary<string, string>();
+        public static List<TeamItem> teamDictionary = new List<TeamItem>();
         private string startDateStringBuilder(string[] startDateArr)
         {
             string field = "closed_at>=";
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1.Services
             var _teamName = Uri.EscapeUriString(teamName).Replace("&", "%26");
             var queryString = queryOpener + startDate + separator + endDate + separator + closedConditionString + separator + teamSelector;
             
-            var test2 = baseString  + teamProjection + separator + queryString + _teamName;
+            var test2 = baseString  + incidentTableName + incidentProjection + separator + queryString + _teamName;
             return test2;
         }
         public string getTeamRequestString()

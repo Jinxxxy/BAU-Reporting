@@ -31,37 +31,37 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.MainChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // MainChart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.MainChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(-1, 1);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(1595, 698);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "By Application Name";
+            this.MainChart.Legends.Add(legend1);
+            this.MainChart.Location = new System.Drawing.Point(-1, 1);
+            this.MainChart.Name = "MainChart";
+            this.MainChart.Size = new System.Drawing.Size(1595, 698);
+            this.MainChart.TabIndex = 0;
+            this.MainChart.Text = "MainChart";
             // 
             // programBindingSource
             // 
             this.programBindingSource.DataSource = typeof(WindowsFormsApplication1.Program);
             // 
-            // ChartArea
+            // LoadChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 697);
-            this.Controls.Add(this.chart1);
-            this.Name = "ChartArea";
+            this.Controls.Add(this.MainChart);
+            this.Name = "LoadChart";
             this.Text = "ChartArea";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -69,6 +69,6 @@
 
         #endregion
         private System.Windows.Forms.BindingSource programBindingSource;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart MainChart;
     }
 }

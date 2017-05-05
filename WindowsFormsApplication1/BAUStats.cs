@@ -24,9 +24,15 @@ namespace WindowsFormsApplication1
             GettingServiceDetails gsd = new GettingServiceDetails();
             RequestStringBuilder rsb = new RequestStringBuilder();
             
-            TeamPicker.DisplayMember = "Key";
-            TeamPicker.ValueMember = "Value";
+            TeamPicker.DisplayMember = "name";
+            TeamPicker.ValueMember = "id";
             
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Size size = TextRenderer.MeasureText(StatusBox.Text, StatusBox.Font);
+            StatusBox.Width = size.Width;
+            StatusBox.Height = size.Height;
+
         }
         public string getUserName(TextBox _usernameInput)
         {
@@ -68,10 +74,16 @@ namespace WindowsFormsApplication1
             DateTime dateTime = dtp.Value;
             return dateTime.ToShortDateString();
         }
-        
-        private Dictionary<string, string> serializeTeams(ResponseResultTemplate rrt)
+        private List<TeamItem> sortTeamList(List<TeamItem> unsortedList)
         {
-            Dictionary<string, string> _returnDict = new Dictionary<string, string>();
+            List<TeamItem> returnList = unsortedList.OrderBy(o => o.name).ToList();
+
+            return returnList;
+        }
+        
+        private List<TeamItem> serializeTeams(ResponseResultTemplate rrt)
+        {
+            List<TeamItem> _returnDict = new List<TeamItem>();
             if (rrt.error)
             {
                 MessageBox.Show(rrt.errorMessage);
@@ -87,18 +99,18 @@ namespace WindowsFormsApplication1
         {
             string[] startDateString = getDate(StartDateInput).Split('/');
             string[] endDateString = getDate(EndDateInput).Split('/');
-            string teamName = ((KeyValuePair<string, string>)TeamPicker.SelectedItem).Value;
+            string teamName = ((TeamItem)TeamPicker.SelectedItem).id;
             RequestStringBuilder rsb = new RequestStringBuilder();
             GettingServiceDetails gsd = new GettingServiceDetails();
-            if (GettingServiceDetails.loginDetails.Count < 2)
-            {
-                GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
-                GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
-            }
+            //if (GettingServiceDetails.loginDetails.Count < 2)
+            //{
+            //    GettingServiceDetails.loginDetails.Add("userName", getUserName(UsernameInput));
+            //    GettingServiceDetails.loginDetails.Add("password", getPassword(PasswordInput));
+            //}
             ResponseResultTemplate value = gsd.MakeRequestToServiceNow(rsb.getIncidentRequestString(startDateString, endDateString, teamName));
             if (value.error)
             {
-                StatusLabel.Text = value.errorMessage;
+                StatusBox.Text = value.errorMessage;
             }
             else
             {
@@ -107,9 +119,9 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private async void LoginButton_Click_1(object sender, EventArgs e)
+        private void LoginButton_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("This is working");
+            StatusBox.Text = "Loading Team Data...";
             GettingServiceDetails gsd = new GettingServiceDetails();
             RequestStringBuilder rsb = new RequestStringBuilder();
             if (GettingServiceDetails.loginDetails.Count < 2)
@@ -125,15 +137,16 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                TeamPicker.DataSource = serializeTeams(gsd.MakeRequestToServiceNow(rsb.getTeamRequestString()));
+                TeamPicker.DataSource = sortTeamList(serializeTeams(gsd.MakeRequestToServiceNow(rsb.getTeamRequestString())));
                 DetailsPanel.Visible = true;
                 LoginButton.Visible = false;
+                StatusBox.Text = "Teams Loaded. ";
             }
         }
 
         private void GetIncidents_Click(object sender, EventArgs e)
         {
-
+            loadIncidentScreen();
         }
     }
 }

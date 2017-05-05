@@ -36,6 +36,7 @@
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DetailsPanel = new System.Windows.Forms.Panel();
+            this.GetIncidents = new System.Windows.Forms.Button();
             this.TeamPickerLabel = new System.Windows.Forms.Label();
             this.TeamPicker = new System.Windows.Forms.ListBox();
             this.EndDateLabel = new System.Windows.Forms.Label();
@@ -43,10 +44,8 @@
             this.EndDateInput = new System.Windows.Forms.DateTimePicker();
             this.StartDateInput = new System.Windows.Forms.DateTimePicker();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.GetIncidents = new System.Windows.Forms.Button();
             this.StatusPanel = new System.Windows.Forms.Panel();
-            this.StatusLabel = new System.Windows.Forms.Label();
-            this.StatusBox = new System.Windows.Forms.TextBox();
+            this.StatusBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DetailsPanel.SuspendLayout();
             this.StatusPanel.SuspendLayout();
@@ -117,11 +116,21 @@
             this.DetailsPanel.Controls.Add(this.StartDateLabel);
             this.DetailsPanel.Controls.Add(this.EndDateInput);
             this.DetailsPanel.Controls.Add(this.StartDateInput);
-            this.DetailsPanel.Location = new System.Drawing.Point(15, 175);
+            this.DetailsPanel.Location = new System.Drawing.Point(15, 233);
             this.DetailsPanel.Name = "DetailsPanel";
-            this.DetailsPanel.Size = new System.Drawing.Size(377, 151);
+            this.DetailsPanel.Size = new System.Drawing.Size(377, 236);
             this.DetailsPanel.TabIndex = 13;
             this.DetailsPanel.Visible = false;
+            // 
+            // GetIncidents
+            // 
+            this.GetIncidents.Location = new System.Drawing.Point(119, 201);
+            this.GetIncidents.Name = "GetIncidents";
+            this.GetIncidents.Size = new System.Drawing.Size(75, 23);
+            this.GetIncidents.TabIndex = 20;
+            this.GetIncidents.Text = "Get Incidents";
+            this.GetIncidents.UseVisualStyleBackColor = true;
+            this.GetIncidents.Click += new System.EventHandler(this.GetIncidents_Click);
             // 
             // TeamPickerLabel
             // 
@@ -139,7 +148,7 @@
             this.TeamPicker.FormattingEnabled = true;
             this.TeamPicker.Location = new System.Drawing.Point(119, 71);
             this.TeamPicker.Name = "TeamPicker";
-            this.TeamPicker.Size = new System.Drawing.Size(200, 43);
+            this.TeamPicker.Size = new System.Drawing.Size(200, 121);
             this.TeamPicker.TabIndex = 18;
             // 
             // EndDateLabel
@@ -182,7 +191,7 @@
             // 
             this.LoginButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.LoginButton.Font = new System.Drawing.Font("Corbel", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(134, 332);
+            this.LoginButton.Location = new System.Drawing.Point(134, 178);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 13;
@@ -190,51 +199,28 @@
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click_1);
             // 
-            // GetIncidents
-            // 
-            this.GetIncidents.Location = new System.Drawing.Point(119, 120);
-            this.GetIncidents.Name = "GetIncidents";
-            this.GetIncidents.Size = new System.Drawing.Size(75, 23);
-            this.GetIncidents.TabIndex = 20;
-            this.GetIncidents.Text = "Get Incidents";
-            this.GetIncidents.UseVisualStyleBackColor = true;
-            this.GetIncidents.Click += new System.EventHandler(this.GetIncidents_Click);
-            // 
             // StatusPanel
             // 
             this.StatusPanel.Controls.Add(this.StatusBox);
-            this.StatusPanel.Controls.Add(this.StatusLabel);
-            this.StatusPanel.Location = new System.Drawing.Point(15, 361);
+            this.StatusPanel.Location = new System.Drawing.Point(102, 207);
             this.StatusPanel.Name = "StatusPanel";
-            this.StatusPanel.Size = new System.Drawing.Size(377, 82);
+            this.StatusPanel.Size = new System.Drawing.Size(283, 20);
             this.StatusPanel.TabIndex = 14;
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Font = new System.Drawing.Font("Corbel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLabel.ForeColor = System.Drawing.Color.Red;
-            this.StatusLabel.Location = new System.Drawing.Point(38, 5);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(0, 27);
-            this.StatusLabel.TabIndex = 0;
             // 
             // StatusBox
             // 
-            this.StatusBox.Font = new System.Drawing.Font("Corbel", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusBox.ForeColor = System.Drawing.Color.Red;
-            this.StatusBox.Location = new System.Drawing.Point(5, 8);
-            this.StatusBox.Multiline = true;
+            this.StatusBox.AutoSize = true;
+            this.StatusBox.Location = new System.Drawing.Point(4, 4);
             this.StatusBox.Name = "StatusBox";
-            this.StatusBox.Size = new System.Drawing.Size(367, 37);
-            this.StatusBox.TabIndex = 1;
+            this.StatusBox.Size = new System.Drawing.Size(0, 13);
+            this.StatusBox.TabIndex = 0;
             // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(397, 455);
+            this.ClientSize = new System.Drawing.Size(397, 477);
             this.Controls.Add(this.StatusPanel);
             this.Controls.Add(this.DetailsPanel);
             this.Controls.Add(this.pictureBox1);
@@ -275,8 +261,7 @@
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button GetIncidents;
         private System.Windows.Forms.Panel StatusPanel;
-        private System.Windows.Forms.Label StatusLabel;
-        private System.Windows.Forms.TextBox StatusBox;
+        private System.Windows.Forms.Label StatusBox;
     }
 }
 

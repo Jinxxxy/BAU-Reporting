@@ -58,6 +58,7 @@
       <DependentUpon>BAUStats.cs</DependentUpon>
     </Compile>
     <Compile Include="ClassModels\DurationInterval.cs" />
+    <Compile Include="ClassModels\TeamItem.cs" />
     <Compile Include="HelperClasses\Chart.cs" />
     <Compile Include="HelperClasses\SortableBindingList.cs" />
     <Compile Include="LoadChart.cs">
